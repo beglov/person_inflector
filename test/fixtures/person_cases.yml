@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person: one
+  case_type: MyString
+  first_name: MyString
+  last_name: MyString
+  middle_name: MyString
+  full_name: MyString
+
+two:
+  person: two
+  case_type: MyString
+  first_name: MyString
+  last_name: MyString
+  middle_name: MyString
+  full_name: MyString
