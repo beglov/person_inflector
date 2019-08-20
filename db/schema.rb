@@ -16,22 +16,22 @@ ActiveRecord::Schema.define(version: 2019_08_13_065925) do
   enable_extension "plpgsql"
 
   create_table "people", force: :cascade do |t|
-    t.string "first_name"
+    t.string "first_name", null: false
     t.string "last_name"
     t.string "middle_name"
-    t.string "full_name"
+    t.string "full_name", null: false
     t.boolean "sex"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "person_cases", force: :cascade do |t|
-    t.bigint "person_id"
-    t.string "case_type"
-    t.string "first_name"
+    t.bigint "person_id", null: false
+    t.string "case_type", null: false
+    t.string "first_name", null: false
     t.string "last_name"
     t.string "middle_name"
-    t.string "full_name"
+    t.string "full_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["person_id"], name: "index_person_cases_on_person_id"

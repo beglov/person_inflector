@@ -1,5 +1,6 @@
 class Person < ApplicationRecord
   has_many :person_cases, dependent: :destroy
+  has_one :person_case_genitive, -> { where(case_type: :genitive) }, class_name: 'PersonCase'
 
   validates :first_name, :full_name, presence: true
 

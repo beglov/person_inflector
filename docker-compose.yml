@@ -10,9 +10,9 @@ services:
     ports:
       - 3000:3000
     environment:
-      POSTGRES_HOST: db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 1q2w3e4r
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     depends_on:
       - db
 
@@ -21,7 +21,7 @@ services:
     volumes:
       - pg_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: 1q2w3e4r
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - 5432:5432
 
