@@ -23,13 +23,13 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Install postgres dependence
-      run: sudo apt-get install -yqq libpq-dev
     - name: Build and test with Rake
       env:
           POSTGRES_HOST: localhost
           POSTGRES_USER: postgres
       run: |
+        sudo apt-get install -yqq libpq-dev
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rake
+        bundle exec rails db:prepare
+        bundle exec rails test
